@@ -1,6 +1,6 @@
 ﻿using SalesOrderManager.Shared.Domain;
 
-namespace SalesOrderManager.App.Services
+namespace SalesOrderManager.BLL
 {
     public interface IOrderDataService
     {

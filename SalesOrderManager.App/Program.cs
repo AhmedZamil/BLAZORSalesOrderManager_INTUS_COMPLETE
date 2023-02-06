@@ -3,8 +3,8 @@ using SalesOrderManager.App.State;
 using Blazored.LocalStorage;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using SalesOrderManager.App.BLL.Interfaces;
-using SalesOrderManager.App.BLL.Services;
+//using SalesOrderManager.App.BLL.Interfaces;
+using SalesOrderManager.BLL;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");

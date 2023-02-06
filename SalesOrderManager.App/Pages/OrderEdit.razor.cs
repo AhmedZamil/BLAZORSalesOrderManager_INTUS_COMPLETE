@@ -1,7 +1,7 @@
 ﻿
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
-using SalesOrderManager.App.BLL.Interfaces;
+using SalesOrderManager.BLL;
 using SalesOrderManager.Shared.Domain;
 
 namespace SalesOrderManager.App.Pages

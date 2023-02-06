@@ -1,10 +1,10 @@
 ﻿using Blazored.LocalStorage;
-using SalesOrderManager.App.Helper;
+using SalesOrderManager.BLL;
 using SalesOrderManager.Shared.Domain;
 using System.Text;
 using System.Text.Json;
 
-namespace SalesOrderManager.App.Services
+namespace SalesOrderManager.BLL
 {
     public class OrderDataService : IOrderDataService
     {

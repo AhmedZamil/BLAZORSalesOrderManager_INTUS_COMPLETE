@@ -2,7 +2,7 @@
 
 using Blazored.LocalStorage;
 
-namespace SalesOrderManager.App.Services
+namespace SalesOrderManager.BLL
 {
     public class EmailService : IEmailService
     {

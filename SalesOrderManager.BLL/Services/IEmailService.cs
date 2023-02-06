@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SalesOrderManager.App.Services
+namespace SalesOrderManager.BLL
 {
     public interface IEmailService
     {

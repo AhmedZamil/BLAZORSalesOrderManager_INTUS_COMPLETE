@@ -14,6 +14,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\SalesOrderManager.BLL\SalesOrderManager.BLL.csproj" />
 	  <ProjectReference Include="..\SalesOrderManager.Shared\SalesOrderManager.Shared.csproj" />
 	</ItemGroup>
 

@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 
-namespace SalesOrderManager.App.Services
+namespace SalesOrderManager.BLL
 {
     public class StateDataService : IStateDataService
     {
