@@ -4,12 +4,14 @@ Task For Developer Blazor NET Core
 # Developer TASK [BLAZOR WebAssembly] INTUS - Technical Challenge
 
  ## Delevery /Task Complete : 
-Setup shortcut [Checked with different machine]It's Just to setup to all done Now.
+Setup shortcut It's Just to setup to all done Now.(.NET SDK 6.0.4 Needs to be present) 
  
     ## 1. Download zip.
     ## 2. Run the Setup.bat file (SalesOrderManager.Api/Setup.bat)  (Will set up everything to run locally )
     ## 3. After Running just browse https://localhost:7039/ 
     ## 4. My Task is Deployed and LIVE ! Browse : https://intusblazorsalesordermanagerapp.azurewebsites.net/
+    
+    .NET SDK 6.0.4 : https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-6.0.4-windows-x64-installer
     
 [It will ensure navigate & install dependency  for dotnet restore, installing dotnet ef ,add migration , update database , build & run the application with Provided Seed data .Just aloow the Setup.bat file sometime to do that , upto when it shows "Building..."]
 
