@@ -55,6 +55,7 @@ Requirements Covered :
      iii.WEB API is Interfacing the Application Backend (.NET Core Web API)
      iv.Data is Comming through API , Service , Repository from SQL DB using EF 6
    3. Make an ability to change and save data in the application: state, name, and dimensions.
+   
      i.Change/Modify/Edit for Data is implemented.
      ii.You can Change state,name,dimension.
      iii.You can even Edit Order
@@ -65,11 +66,13 @@ Requirements Covered :
      ii.You can Romove - Edit Sub Element from Window.
      ii.You can  add Sub Element to Window 
    4. Add the ability to create and delete orders, windows and elements.
+   
      i.Order :You can even Create/View/Remove/Edit New.
      ii.Window: You can even Create/View/Remove/Edit New.
      iii.Sub Element: You can even Create/View/Remove/Edit New.
      
    5. Optional: Interface validations. DTO. Separated BLL and DAL projects.
+   
      i. Validation For Basic Requiered Fields with other validation
      ii.Domain Models are in seperate .NET Core project
      iii.Repositories are in seperate .NET Core project
