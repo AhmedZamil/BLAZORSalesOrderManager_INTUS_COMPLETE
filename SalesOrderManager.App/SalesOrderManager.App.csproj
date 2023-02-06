@@ -15,7 +15,7 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\SalesOrderManager.BLL\SalesOrderManager.BLL.csproj" />
-	  <ProjectReference Include="..\SalesOrderManager.Shared\SalesOrderManager.Shared.csproj" />
+	  <ProjectReference Include="..\SalesOrderManager.Shared\SalesOrderManager.DTO.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
