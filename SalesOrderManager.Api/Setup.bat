@@ -10,7 +10,7 @@ dotnet build
 echo  packages build successfully 
 
 cd..
-SalesOrderManager.DAL
+cd SalesOrderManager.DAL
 
 dotnet restore
 dotnet build
