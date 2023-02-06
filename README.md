@@ -1,7 +1,7 @@
 # BLAZOR Sales Order Manager INTUS
 Task For Developer Blazor NET Core
 
-# Developer TASK [BLAZOR WASM] INTUS - Technical Challenge
+# Developer TASK [BLAZOR WebAssembly] INTUS - Technical Challenge
 
  ## Delevery /Task Complete : 
 Setup shortcut [Checked with different machine]It's Just to setup to all done Now.
