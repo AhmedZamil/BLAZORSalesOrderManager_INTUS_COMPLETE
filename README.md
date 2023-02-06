@@ -104,8 +104,8 @@ NOTE : Here BLAZOR WEB Assembly need API/INTERFACE to communicate/Feed data.It c
 
 # Prerequisites ( If some body want's to take the code in visual studio)
 
-## Only [.NET Core 6.0 SDK] (https://dotnet.microsoft.com/download) has to be present to Run
-## After running setup file , give it some time [after setting up npm-EF-Db-Seed data When it shows "Building" just browse http://localhost:5000/]
+## Only [.NET Core 6.0.4 SDK] (.NET SDK 6.0.4 : https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-6.0.4-windows-x64-installer) has to be present to Run
+## After running setup file , give it some time [after setting up npm-EF-Db-Seed data When it shows "Building" just browse http://localhost:7039/]
 
 If you want to open in developer mode 
 
@@ -123,21 +123,20 @@ step 3: open the solution file in visual studio 2022
 
 step 4: go to command prompt terminal
 
-step 5: run command to check ,  dotnet --version (it has to be ASP.NET Core 6.0)
+step 5: run command to check ,  dotnet --version (it has to be .NET Core SDK 6.0.4)
 
 step 6 : run command dotnet restore or clean the solution clean the project and  - build
 
 step 7: make sure you setup the database and Entity Framework migrations!
 This is how:
-      1. Remove the contents of the folder Migrations.
+      1. select BAL project
       2. Then open the Package Manager Console (Tools->Nuget Package Manager->Package Manager Console).
       3. Run the following commands:
 
-          Add-Migration Initial
           Update-Database
  
  
- step 12: run the solution [either with F5 or dotnet run ]
+ step 12: Select API project as start up project run the solution [either with F5 or dotnet run ]
 
  step 13: Application should be in web browser
  
@@ -146,7 +145,7 @@ This is how:
  
 
 
-5) run the setup.bat file (you wil find it in current working directory)
+5) run the setup.bat file in api project folder (you wil find it in current working directory)
    it does the below steps 
 
    - dotnet restore will restore all dependecis
