@@ -13,7 +13,7 @@ Setup shortcut It's Just to setup to all done Now.(.NET SDK 6.0.4 Needs to be pr
     
     .NET SDK 6.0.4 : https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-6.0.4-windows-x64-installer
     
-[It will ensure navigate & install dependency  for dotnet restore, installing dotnet ef ,add migration , update database , build & run the application with Provided Seed data .Just aloow the Setup.bat file sometime to do that , upto when it shows "Building..."]
+[It will ensure navigate & install dependency  for dotnet restore, installing dotnet ef ,add migration , update database , build & run the application with Provided Seed data .Just allow the Setup.bat file sometime to do that , upto when it shows "Building..."]
 
  * Note : you will find the details below if you want to run development enviourment [Visual Studio 2022] 
  * Note : you will find the Navigation to application to say how to browse application sections & what they do
