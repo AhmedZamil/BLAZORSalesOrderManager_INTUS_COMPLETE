@@ -18,6 +18,7 @@ Setup shortcut It's Just to setup to all done Now.(.NET SDK 6.0.4 Needs to be pr
  * Note : you will find the details below if you want to run development enviourment [Visual Studio 2022] 
  * Note : you will find the Navigation to application to say how to browse application sections & what they do
  * Note : to achieve better presentation I have deployed the application in Azure, You can browse it
+ Browse : https://intusblazorsalesordermanagerapp.azurewebsites.net/
 
 ## Developer Task & Requerments :
 
