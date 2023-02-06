@@ -46,34 +46,34 @@ SQL Server using Entity Framework 6 and LocalDB
 # Domain Requirement 
 Requirements Covered :
    1. Yes ,Database has been created Using Code First In Entity Framework.
-     a.Provided Sample data has been seeded for initial execution.
+     i.Provided Sample data has been seeded for initial execution.
    2. Created Blazor WebAssembly app with an interface to show data from DB.
-     a.It's Blazor WebAssembly App.
-     b.UI with Blazor with Pages,Component,Widget,Navigation.
-     c.WEB API is Interfacing the Application Backend (.NET Core Web API)
-     d.Data is Comming through API , Service , Repository from SQL DB using EF 6
+     i.It's Blazor WebAssembly App.
+     ii.UI with Blazor with Pages,Component,Widget,Navigation.
+     iii.WEB API is Interfacing the Application Backend (.NET Core Web API)
+     iv.Data is Comming through API , Service , Repository from SQL DB using EF 6
    3. Make an ability to change and save data in the application: state, name, and dimensions.
-     a.Change/Modify/Edit for Data is implemented.
-     b.You can Change state,name,dimension.
-     c.You can even Edit Order
-     d.You can Romove - Edit Windows from Order.
-     e.You can add Windows to order
+     i.Change/Modify/Edit for Data is implemented.
+     ii.You can Change state,name,dimension.
+     iii.You can even Edit Order
+     iv.You can Romove - Edit Windows from Order.
+     v.You can add Windows to order
      
      i.You can even Edit Windows
      ii.You can Romove - Edit Sub Element from Window.
      ii.You can  add Sub Element to Window 
    4. Add the ability to create and delete orders, windows and elements.
-     a.Order :You can even Create/View/Remove/Edit New.
-     d.Window: You can even Create/View/Remove/Edit New.
-     c.Sub Element: You can even Create/View/Remove/Edit New.
+     i.Order :You can even Create/View/Remove/Edit New.
+     ii.Window: You can even Create/View/Remove/Edit New.
+     iii.Sub Element: You can even Create/View/Remove/Edit New.
      
    5. Optional: Interface validations. DTO. Separated BLL and DAL projects.
-     a. Validation For Basic Requiered Fields with other validation
-     b.Domain Models are in seperate .NET Core project
-     c.Repositories are in seperate .NET Core project
-     d. Services are in seperate .NET Core Project
-     e. WEB API is in seperate .NET Core web API project.But when you run API other than using OPEN API for documentation I used to boot UI app.Just to make it compact       & easy to deploy in Azure.
-     f.UI (BLAZOR ) is in seperate WASM implemented project
+     i. Validation For Basic Requiered Fields with other validation
+     ii.Domain Models are in seperate .NET Core project
+     iii.Repositories are in seperate .NET Core project
+     iv. Services are in seperate .NET Core Project
+     v. WEB API is in seperate .NET Core web API project.But when you run API other than using OPEN API for documentation I used to boot UI app.Just to make it compact       & easy to deploy in Azure.
+     v.UI (BLAZOR ) is in seperate WASM implemented project
 
 NOTE : Here BLAZOR WEB Assembly need API/INTERFACE to communicate/Feed data.It could have been a Seperated Pr 
 
