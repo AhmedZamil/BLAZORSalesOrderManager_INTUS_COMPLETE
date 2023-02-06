@@ -1,0 +1,35 @@
+﻿@page "/subelementoverview"
+
+<PageTitle>@Title</PageTitle>
+
+<HeadContent>
+    <meta name="description" content="@Description">
+</HeadContent>
+
+<h2>All Sub Elements</h2>
+
+@if (SubElements == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <QuickSubElementViewPopup SubElement="_selectedSubElement"></QuickSubElementViewPopup>
+
+    <div class="row">
+        @foreach (var subElement in SubElements)
+        {
+            <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-2">
+                <ErrorBoundary>
+                    <ChildContent>
+                        <SubElementCard SubElement="subElement" SubElementQuickViewClicked="ShowQuickSubElementViewPopup"></SubElementCard>
+                    </ChildContent>
+                    <ErrorContent>
+                        <p class="errorUI">Invalid Sub Element!</p>
+                    </ErrorContent>
+                </ErrorBoundary>
+            </div>
+            
+        }
+    </div>
+}

@@ -1,0 +1,76 @@
+﻿@page "/"
+
+
+@*<div class="row">
+    <div class="col-md-8">
+        <h3 class="page-title">Sales Order Management</h3>
+    </div>
+</div>*@
+
+        <div class="" id="content" style="padding: 50px 10px 0;max-width: 1370px;margin: auto;">
+            <div class="content">
+                <img src="/images/one-window-one-tree-graphic-horizontal.jpg" alt="one window one tree graphic" loading="lazy">
+                <h5 class="title" style="padding-left: 200px;padding-top: 30px;padding-bottom: 0;">For every window and door sold, we plant a
+                    tree!</h5><br>
+            </div>
+            <div class="secondary-content">
+              
+            </div>
+        </div>
+
+
+<div class="row">
+
+
+    @foreach (var widgetType in Widgets)
+    {
+        <DynamicComponent Type="widgetType"></DynamicComponent>
+    }
+
+
+
+
+</div>
+
+<div class="row">
+      <div class="col-md-8 hide-on-mobile main-block">
+                <h3>NEW Order </h3>
+                <p><NewOrderCard></NewOrderCard></p
+       </div>
+
+
+       <div class="col-md-4" style="border-radius: 200px; padding-top: 30px;">
+            <div id="reportConcern" class="widget">
+            <h3>Report a Concern</h3>
+            <p>It's simple, safe and anonymous.</p>
+
+            @if (!EmailSent)
+            {
+                        <EditForm Model="@NewConcern" OnValidSubmit="SubmitConcern">
+                            <DataAnnotationsValidator />
+                            <div class="form-group">
+                                <label for="title">Title: </label>
+                                <InputText id="title" class="form-control" @bind-Value="@NewConcern.Title" placeholder="Enter title"></InputText>
+                                <ValidationMessage For="@(() => NewConcern.Title)" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="title">Description: </label>
+                                <InputTextArea id="title" class="form-control" @bind-Value="@NewConcern.Description" placeholder="Enter title"></InputTextArea>
+                                <ValidationMessage For="@(() => NewConcern.Description)" />
+                            </div>
+
+                            <button type="submit" class="btn btn-primary edit-btn">Submit</button>
+                        </EditForm>
+            }
+            else
+            {
+                        <p>Your message has been sent! You should receive a response from HR within 24 hours.</p>
+                        <button type="button" @onclick="ResetForm" class="btn btn-primary edit-btn">Send Another</button>
+            }
+        </div>
+       </div>
+
+</div>
+
+

@@ -1,0 +1,35 @@
+﻿@page "/windowoverview"
+
+<PageTitle>@Title</PageTitle>
+
+<HeadContent>
+    <meta name="description" content="@Description">
+</HeadContent>
+
+<h2>All Active Windows</h2>
+
+@if (Windows == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <QuickWindowViewPopup Window="_selectedWindow"></QuickWindowViewPopup>
+
+    <div class="row">
+        @foreach (var window in Windows)
+        {
+            <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-2">
+                <ErrorBoundary>
+                    <ChildContent>
+                        <WindowCard Window="window" WindowQuickViewClicked="ShowQuickWindowViewPopup"></WindowCard>
+                    </ChildContent>
+                    <ErrorContent>
+                        <p class="errorUI">Invalid Windows!</p>
+                    </ErrorContent>
+                </ErrorBoundary>
+            </div>
+            
+        }
+    </div>
+}

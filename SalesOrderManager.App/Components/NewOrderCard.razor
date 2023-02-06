@@ -1,0 +1,30 @@
+﻿
+    <span>We're constantly expanding our service!</span>
+    @if (NewOrders == null)
+    {
+         <p><em>Latest Orders Loading...</em></p>
+    }
+    else
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var order in NewOrders)
+                {
+                    <tr>
+                        <td><img width="30px" src="/images/order.png" class="rounded-circle" /></td>
+                        <td>@order.Name</td>
+                        <td>@order.State.Name</td>
+                        
+                    </tr>
+                }
+            </tbody>
+        </table>
+   
+    }

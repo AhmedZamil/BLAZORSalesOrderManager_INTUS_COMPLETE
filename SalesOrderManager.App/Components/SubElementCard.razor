@@ -1,0 +1,18 @@
+﻿
+<div class="col">
+    <div class="card rounded-3 employee-card">
+        <div class="card-header py-3">
+            <h4>@SubElement.ElementType Of @SubElement.Height X @SubElement.Width</h4>
+        </div>
+        <div class="card-body employee-card text-center">
+           
+            <button class="btn btn-primary btn-sm mb-1"@onclick="@(async () => await SubElementQuickViewClicked.InvokeAsync(SubElement))"> Quick view</button>
+            <a href= "@($"subelementdetail/{SubElement.SubElementId}")" class="btn btn-outline-primary btn-sm mb-1">
+                Full details
+            </a>
+            <a href="@($"subelementedit/{SubElement.SubElementId}")" class="btn btn-outline-primary btn-sm mb-1">
+                Edit
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,93 @@
+﻿@page "/subelementedit"
+@page "/subelementedit/{SubElementId}"
+@page "/subelementcreate/{WindowId}"
+
+@using SalesOrderManager.Shared.Domain
+
+@if (!Saved)
+{
+        <section class="employee-edit">
+
+            <h3 class="page-title">Add Sub Element To Window </h3>
+                    @if (Window != null)
+                    {
+                                <h4 class="page-title"> Window Name : @Window?.Name </h4>
+                    }
+                    else
+                    {
+                               <h4 class="page-title"> No Window Selected </h4> 
+
+                    }
+
+            <EditForm Model="@SubElement" OnValidSubmit="@HandleValidSubmit"
+              OnInvalidSubmit="@HandleInvalidSubmit">
+
+                <DataAnnotationsValidator />
+                <ValidationSummary></ValidationSummary>
+
+            @if (SubElement.SubElementId == 0)
+            {
+                        <div class="row mb-3">
+                            <label for="image" class="col-12 col-sm-3">Select image: </label>
+                            <div class="col-md-8">
+                                <InputFile OnChange="OnInputFileChange" />
+                            </div>
+
+                        </div>
+            }
+
+
+                <div class="row mb-3">
+                    <label for="element" class="col-form-label col-md-3">Element: </label>
+                    <div class="col-md-8">
+                        <InputNumber id="element" class="form-control col-md-8" @bind-Value="@SubElement.Element"></InputNumber>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="height" class="col-form-label col-md-3">Height: </label>
+                    <div class="col-md-8">
+                        <InputNumber id="height" class="form-control col-md-8" @bind-Value="@SubElement.Height"></InputNumber>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="width" class="col-form-label col-md-3">Width: </label>
+                    <div class="col-md-8">
+                        <InputNumber id="width" class="form-control col-md-8" @bind-Value="@SubElement.Width"></InputNumber>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="elementtype" class="col-form-label col-md-3">Element Type: </label>
+                    <div class="col-md-8">
+                        <InputSelect id="elementtype" class="form-select col-md-8" @bind-Value=@SubElement.ElementType>
+                            <option value="@(ElementType.Doors)">Doors</option>
+                            <option value="@(ElementType.Window)">Window</option>
+                            <option value="@(ElementType.Other)">Other</option>
+                        </InputSelect>
+                    </div>
+                </div>
+
+
+                <button type="submit" class="btn btn-primary me-1">Save Sub Element</button>
+
+            @if (SubElement.SubElementId > 0)
+            {
+                        <button type="button" class="btn btn-danger my-1" @onclick="@DeleteSubElement">
+                            Delete
+                        </button>
+            }
+
+                <button type="button" class="btn btn-outline-primary ms-1" @onclick="@NavigateToOverview">Back to overview</button>
+
+            </EditForm>
+
+
+        </section>
+}
+else
+{
+        <div class="alert @StatusClass">@Message</div>
+        <button type="button" class="btn btn-outline-primary" @onclick="@NavigateToOverview">Back to overview</button>
+}

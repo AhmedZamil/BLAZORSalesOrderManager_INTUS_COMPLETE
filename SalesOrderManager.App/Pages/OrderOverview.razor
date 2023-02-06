@@ -1,0 +1,76 @@
+﻿@page "/orderoverview"
+
+<PageTitle>@Title</PageTitle>
+
+<HeadContent>
+    <meta name="description" content="@Description">
+</HeadContent>
+
+<h2>Active Order</h2>
+
+@if (Orders == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Order ID</th>
+                <th>Order name</th>
+                <th>State</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in Orders)
+            {
+                <tr>
+                    <td><img width="30" src="/images/order.png" class="rounded-circle" /></td>
+                    <td>@order.OrderId</td>
+                    <td>@order.Name</td>
+                    <td>@order.State.Name</td>
+                    <td>
+                        <a href="@($"orderdetail/{order.OrderId}")" class="btn btn-primary table-btn">
+                            <i class="fas fa-info-circle"></i>
+                        </a>
+                        <a href="@($"orderedit/{order.OrderId}")" class="btn btn-primary table-btn">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+
+@if (Orders == null)
+{
+    <p><em>Loading Orders...</em></p>
+}
+else
+{
+
+    <QuickOrderViewPopup Order="_selectedOrder"></QuickOrderViewPopup>
+
+    <div class="row">
+        @foreach (var order in Orders)
+        {
+            <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-2">
+                <ErrorBoundary>
+                    <ChildContent>
+                        <OrderCard Order="order" OrderRemoveClicked="DeleteOrder" OrderQuickViewClicked="ShowQuickOrderViewPopup"></OrderCard>
+                    </ChildContent>
+                    <ErrorContent>
+                        <p class="errorUI">Invalid order!</p>
+                    </ErrorContent>
+                </ErrorBoundary>
+            </div>
+            
+        }
+    </div>
+}

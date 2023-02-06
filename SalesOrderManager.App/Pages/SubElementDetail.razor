@@ -1,0 +1,70 @@
+﻿@page "/subelementdetail/{SubElementId}"
+
+
+<section class="employee-detail">
+        @if (Window != null)
+            {
+                  <h2 class="page-title">Order : @Window.Name </h2>  
+            }
+    <h3 class="page-title">Sub Element Details :  @SubElement.ElementType </h3>
+    <br />
+    <div class="col-12 row">
+        <div class="col-2 text-center">
+
+        </div>
+        <div class="col-10 row">
+            <div class="col-12 col-xxl-8">
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">SubElement ID</label>
+                    <div class="col-sm-8">
+                        <label type="text" class="form-control-plaintext">@SubElement.SubElementId</label>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Element</label>
+                    <div class="col-sm-8">
+                        <label type="text" readonly class="form-control-plaintext">@SubElement.Element.ToString()</label>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Type</label>
+                    <div class="col-sm-8">
+                        <label type="text" readonly class="form-control-plaintext"> @SubElement.ElementType</label>
+                    </div>
+                </div>
+
+                 <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Width</label>
+                    <div class="col-sm-8">
+                        <label type="text" readonly class="form-control-plaintext"> @SubElement.Width.ToString()</label>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Height</label>
+                    <div class="col-sm-8">
+                        <label type="text" readonly class="form-control-plaintext"> @SubElement.Height.ToString()</label>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    @if (SubElement?.WindowId > 0)
+                    {
+                        <button type="button" class="btn btn-outline-primary ms-1" @onclick="@NavigateToWindowDetails">Back to window details</button>
+                    }
+                    else
+                    {
+                        <button type="button" class="btn btn-outline-primary ms-1" @onclick="@NavigateToWindowDetails">Back to overview</button>
+                    
+                    }
+                    
+                </div>
+
+            </div>
+            <div class="col-12 col-xxl-4">
+            </div>
+        </div>
+    </div>
+</section>
+

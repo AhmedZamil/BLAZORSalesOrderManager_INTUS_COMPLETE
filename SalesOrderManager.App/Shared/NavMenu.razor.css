@@ -1,0 +1,155 @@
+
+
+
+
+nav {
+    border-color: #a593c2;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+#page-content-wrapper {
+    min-width: 100vw;
+}
+
+.container-fluid {
+    padding: 25px;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+}
+
+@media (min-width: 768px) {
+    #sidebar-wrapper {
+        margin-left: 0;
+    }
+
+    #page-content-wrapper {
+        min-width: 0;
+        width: 100%;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: -15rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+.employee-box {
+    padding: 10px;
+}
+
+.img-responsive {
+    width: 100%;
+}
+
+.validation-errors {
+    list-style: none;
+    margin: 25px 0;
+    padding: 0;
+    color: red;
+}
+
+.active {
+    font-weight: bold;
+}
+
+#sidebar {
+
+    transition: all 0.3s;
+}
+
+    #sidebar.active {
+        margin-left: -250px;
+    }
+
+    #sidebar .sidebar-header {
+        padding: 20px;
+        background: #6d7fcc;
+    }
+
+    #sidebar ul.components {
+        padding: 20px 0;
+    }
+
+    #sidebar ul p {
+
+        padding: 10px;
+    }
+
+    #sidebar ul li a {
+        padding: 10px;
+        font-size: 1.1em;
+        text-decoration: none !important;
+        display: block;
+        color: #65c054;
+    }
+
+        #sidebar ul li a:hover {
+            color: #7386D5;
+            text-decoration: none;
+            background: #fff;
+            text-decoration: none !important;
+        }
+
+    #sidebar ul li.active > a,
+    a[aria-expanded="true"] {
+        text-decoration: none !important;
+    }
+
+a[data-toggle="collapse"] {
+    position: relative;
+    text-decoration: none !important;
+   
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+#sidebar .sub-menu li a {
+    padding-left: 25px;
+    text-decoration: none !important;
+    padding: 25px !important;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+}
+
+.sub-menu {
+    display: none;
+}
+
+.validation-message {
+    margin-left: 25px;
+    color: red;
+}
+
+#sidebar .toggle-hide {
+    display: none;
+}
+
+#sidebar .toggle-show {
+    display: block;
+}
+

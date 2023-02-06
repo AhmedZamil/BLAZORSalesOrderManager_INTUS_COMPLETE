@@ -1,0 +1,114 @@
+﻿@page "/windowedit"
+@page "/windowedit/{WindowId}"
+@page "/windowcreate/{OrderId}"
+
+
+@using SalesOrderManager.Shared.Domain
+
+@if (!Saved)
+{
+    <section class="employee-edit">
+
+        <h1 class="page-title">Details for @Window.WindowId  @Window.Name </h1>
+
+        @if(Order != null)
+        {
+            <h4 class="page-title"> Order Name : @Order?.Name </h4>
+        }
+        else
+        {
+           <h4 class="page-title"> No Order Selected </h4> 
+
+        }
+
+        <EditForm Model="@Window" OnValidSubmit="@HandleValidSubmit"
+              OnInvalidSubmit="@HandleInvalidSubmit">
+
+            <DataAnnotationsValidator />
+            <ValidationSummary></ValidationSummary>
+
+            @if (Window.WindowId == 0)
+            {
+                <div class="row mb-3">
+                    <label for="image" class="col-12 col-sm-3">Select image: </label>
+                    <div class="col-md-8">
+                        <InputFile OnChange="OnInputFileChange" />
+                    </div>
+
+                </div>
+            }
+
+            <div class="row mb-3">
+                <label for="windowName" class="col-form-label col-md-3">Name : </label>
+                <div class="col-md-8">
+                    <InputText id="windowName" class="form-control col-md-8" @bind-Value="@Window.Name" placeholder="Enter first name"></InputText>
+                    <ValidationMessage class="offset-md-3 col-md-8" For="@(() => Window.Name)" />
+                </div>
+
+            </div>
+
+
+            <div class="row mb-3">
+                <label for="quantity" class="col-form-label col-md-3">Quantity Of Windows: </label>
+                <div class="col-md-8">
+                    <InputNumber id="quantity" class="form-control col-md-8" @bind-Value="@Window.QuantityOfWindows"></InputNumber>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="subelements" class="col-form-label col-md-3">Total Sub Elements: </label>
+                <div class="col-md-8">
+                    <InputNumber id="subelements" class="form-control col-md-8" @bind-Value="@Window.TotalSubElements"></InputNumber>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="addsubelements" class="col-form-label col-md-3">Include Sub Elements : </label>
+                <div class="col-md-8">
+                    <Select id="addsubelements" class="form-select col-md-8" @onchange="OnSelectionChanged" >
+                        @foreach (var subElement in SubElements)
+                        {
+                            <option value="@subElement.SubElementId" selected="@SubElements.Contains(subElement)">@subElement.ElementType - @subElement.Height - @subElement.Width </option>
+                        }
+                    </Select>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+             @foreach (var subElement in SelectedSubElements)
+                        {
+                            <label for="selectedsubelements" class="col-form-label col-md-3">@subElement.ElementType - @subElement.Height - @subElement.Width </label>
+                        }
+            </div>
+
+@*            <select @ref="_selectReference" @onchange="OnSelectionChanged" multiple>
+	            @foreach (var subElement in SubElements)
+	            {
+		            <option value="@subElement.SubElementId" selected="@SubElements.Contains(subElement)">@subElement.ElementType - @subElement.Height - @subElement.Width</option>
+	            }
+            </select>*@
+
+
+
+
+            <button type="submit" class="btn btn-primary me-1">Save Window</button>
+
+            @if (Window.WindowId > 0)
+            {
+                <button type="button" class="btn btn-danger my-1" @onclick="@DeleteWindow">
+                    Delete
+                </button>
+            }
+
+            <button type="button" class="btn btn-outline-primary ms-1" @onclick="@NavigateToOverview">Back to overview</button>
+
+        </EditForm>
+
+
+    </section>
+}
+else
+{
+    <div class="alert @StatusClass">@Message</div>
+    <button type="button" class="btn btn-outline-primary" @onclick="@NavigateToOverview">Back to overview</button>
+}

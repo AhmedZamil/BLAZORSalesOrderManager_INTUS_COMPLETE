@@ -1,0 +1,143 @@
+﻿@*<div class="sidebar bg-light">
+    <div class="pt-2 h-100">
+        <ProfilePicture>
+            <img class="img-fluid rounded-circle" src="images/profilePicture.jpg" />
+        </ProfilePicture>
+
+        <div class="menu list-group list-group-flush pt-5">
+            <NavLink class="list-group-item list-group-item-action bg-light" href="/" Match="NavLinkMatch.All">
+                <span class="oi oi-home" aria-hidden="true"></span> Home
+            </NavLink>
+
+            <NavLink class="list-group-item list-group-item-action bg-light" href="/orderoverview">
+                <span class="oi oi-people" aria-hidden="true"></span> Orders
+            </NavLink>
+
+             <NavLink class="list-group-item list-group-item-action bg-light" href="/orderedit">
+                <span class="oi oi-plus" aria-hidden="true"></span> Add Order
+            </NavLink>
+
+            <NavLink class="list-group-item list-group-item-action bg-light" href="/windowoverview">
+                <span class="oi oi-people" aria-hidden="true"></span> Windows
+            </NavLink>
+
+            <NavLink class="list-group-item list-group-item-action bg-light" href="/windowedit">
+                <span class="oi oi-plus" aria-hidden="true"></span> Add Window
+            </NavLink>
+
+            <NavLink class="list-group-item list-group-item-action bg-light" href="/subelementoverview">
+                <span class="oi oi-people" aria-hidden="true"></span> Elements
+            </NavLink>
+             <NavLink class="list-group-item list-group-item-action bg-light" href="/subelementedit">
+                <span class="oi oi-plus" aria-hidden="true"></span> Add Element
+            </NavLink>
+        </div>
+    </div>
+</div>*@
+
+
+<div class="sidebar bg-light">
+    <div class="pt-2 h-100">
+        <ProfilePicture>
+            <img class="img-fluid rounded-circle" src="images/profilePicture.png" />
+        </ProfilePicture>
+
+        <div class="menu list-group list-group-flush pt-5">
+        <nav id="sidebar">
+            <ul class="list-unstyled components">
+                <li>
+                    <NavLink href="/" style="text-decoration: none !important;padding: 10px;font-size: 1.1em;display: block;
+">
+                        Home
+                    </NavLink>
+                </li>
+                <li>
+                    <a @onclick="(() => ToggleNav1(1))" data-toggle="collapse" class="dropdown-toggle">Orders</a>
+                    <ul class="list-unstyled sub-menu @( this.IsHidden1 ? "toggle-hide": "toggle-show")" id="tasks">
+                        <li>
+                            <NavLink href="/orderoverview" style="text-decoration: none !important;padding-left: 25px !important;" >
+                                View Orders
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink href="/orderedit" style="text-decoration: none !important;padding-left: 25px !important;">
+                                Add Order
+                            </NavLink>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a @onclick="(() => ToggleNav1(2))" data-toggle="collapse" class="dropdown-toggle">Window</a>
+                    <ul class="list-unstyled sub-menu @( this.IsHidden2 ? "toggle-hide": "toggle-show")" id="employees">
+                        <li>
+                            <NavLink href="/windowoverview" style="text-decoration: none !important;padding-left: 25px !important;">
+                                View Windows
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink href="/windowedit" style="text-decoration: none !important;padding-left: 25px !important;">
+                                Add Window
+                            </NavLink>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a @onclick="(() => ToggleNav1(3))" data-toggle="collapse" class="dropdown-toggle">Sub Element</a>
+                    <ul class="list-unstyled sub-menu @( this.IsHidden3 ? "toggle-hide": "toggle-show")" id="jobs">
+                        <li>
+                            <NavLink href="/subelementoverview" style="text-decoration: none !important;padding-left: 25px !important;">
+                                View Element
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink href="/subelementedit" style="text-decoration: none !important;padding-left: 25px !important;">
+                                Add Element
+                            </NavLink>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+@code{
+    public bool IsHidden1 { get; set; } = true;
+    public bool IsHidden2 { get; set; } = true;
+    public bool IsHidden3 { get; set; } = true;
+    public bool IsHidden4 { get; set; } = true;
+    public bool IsHidden5 { get; set; } = true;
+
+    public void ToggleNav1(int navId)
+    {
+        switch (navId)
+        {
+            case 1:
+                IsHidden1 = !IsHidden1;
+                break;
+            case 2:
+                IsHidden2 = !IsHidden2;
+                break;
+            case 3:
+                IsHidden3 = !IsHidden3;
+                break;
+            case 4:
+                IsHidden4 = !IsHidden4;
+                break;
+            case 5:
+                IsHidden5 = !IsHidden5;
+                break;
+        }
+
+    }
+}
+
+
+
+

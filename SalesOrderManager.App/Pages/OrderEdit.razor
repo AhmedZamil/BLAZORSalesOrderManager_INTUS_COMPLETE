@@ -1,0 +1,70 @@
+﻿@page "/orderedit"
+@page "/orderedit/{OrderId}"
+
+@using SalesOrderManager.Shared.Domain
+
+@if (!Saved)
+{
+    <section class="employee-edit">
+
+        <h1 class="page-title">Details for @Order.OrderId  @Order.Name </h1>
+
+        <EditForm Model="@Order" OnValidSubmit="@HandleValidSubmit"
+              OnInvalidSubmit="@HandleInvalidSubmit">
+
+            <DataAnnotationsValidator />
+            <ValidationSummary></ValidationSummary>
+
+            @if (Order.OrderId == 0)
+            {
+                <div class="row mb-3">
+                    <label for="image" class="col-12 col-sm-3">Select image: </label>
+                    <div class="col-md-8">
+                        <InputFile OnChange="OnInputFileChange" />
+                    </div>
+
+                </div>
+            }
+
+            <div class="row mb-3">
+                <label for="orderName" class="col-form-label col-md-3">Order Name : </label>
+                <div class="col-md-8">
+                    <InputText id="orderName" class="form-control col-md-8" @bind-Value="@Order.Name" placeholder="Enter first name"></InputText>
+                    <ValidationMessage class="offset-md-3 col-md-8" For="@(() => Order.Name)" />
+                </div>
+
+            </div>
+
+             <div class="row mb-3">
+                <label for="country" class="col-form-label col-md-3">State: </label>
+                <div class="col-md-8">
+                    <InputSelect id="country" class="form-select col-md-8" @bind-Value="@Order.StateId">
+                        @foreach (var state in States)
+                        {
+                            <option value="@state.StateId">@state.Name</option>
+                        }
+                    </InputSelect>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary me-1">Create Order</button>
+
+            @if (Order.OrderId > 0)
+            {
+                <button type="button" class="btn btn-danger my-1" @onclick="@DeleteOrder">
+                    Delete
+                </button>
+            }
+
+            <button type="button" class="btn btn-outline-primary ms-1" @onclick="@NavigateToOverview">Back to overview</button>
+
+        </EditForm>
+
+
+    </section>
+}
+else
+{
+    <div class="alert @StatusClass">@Message</div>
+    <button type="button" class="btn btn-outline-primary" @onclick="@NavigateToOverview">Back to overview</button>
+}

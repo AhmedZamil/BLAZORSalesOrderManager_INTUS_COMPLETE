@@ -1,0 +1,56 @@
+﻿@if (_subElement != null)
+{
+        <div class="modal fade show d-block" id="exampleModal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="titleLabel">SubElement Quick Add</h5>
+                        <button type="button" class="close btn btn-lg" @onclick="@Close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col row">
+                            <div class="col-12 col-sm-8">
+                                <div class="form-group row">
+                                    <label class="col-sm-5 col-form-label">SubElement ID</label>
+                                    <div class="col-sm-7">
+                                        <label type="text" class="form-control-plaintext">@_subElement.SubElementId</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-5 col-form-label">SubElement Element</label>
+                                    <div class="col-sm-7">
+                                        <label type="text" readonly class="form-control-plaintext">@_subElement.Element.ToString()</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-5 col-form-label">Width</label>
+                                    <div class="col-sm-7">
+                                        <label type="text" readonly class="form-control-plaintext">@_subElement.Width.ToString()</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-5 col-form-label">Height</label>
+                                    <div class="col-sm-7">
+                                        <label type="text" readonly class="form-control-plaintext">@_subElement.Height.ToString()</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-5 col-form-label">Element Type</label>
+                                    <div class="col-sm-7">
+                                        <label type="text" readonly class="form-control-plaintext">@_subElement.ElementType</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-outline-primary" @onclick="@Close">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+}
