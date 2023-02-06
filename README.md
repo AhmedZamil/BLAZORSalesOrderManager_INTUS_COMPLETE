@@ -46,8 +46,10 @@ SQL Server using Entity Framework 6 and LocalDB
 # Domain Requirement 
 Requirements Covered :
    1. Yes ,Database has been created Using Code First In Entity Framework.
+  
      i.Provided Sample data has been seeded for initial execution.
    2. Created Blazor WebAssembly app with an interface to show data from DB.
+   
      i.It's Blazor WebAssembly App.
      ii.UI with Blazor with Pages,Component,Widget,Navigation.
      iii.WEB API is Interfacing the Application Backend (.NET Core Web API)
