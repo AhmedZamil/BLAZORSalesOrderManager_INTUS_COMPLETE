@@ -46,8 +46,7 @@ SQL Server using Entity Framework 6 and LocalDB
 
 ## Delevery / TASK Submission : Details
 
-# Domain Requirement 
-Requirements Covered :
+#  Requirements Covered :
    1. Yes ,Database has been created Using Code First In Entity Framework.
   
      i.Provided Sample data has been seeded for initial execution.
